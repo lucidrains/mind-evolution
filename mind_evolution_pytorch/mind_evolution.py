@@ -36,6 +36,11 @@ def reset_island(
 ) -> Islands:
     raise NotImplementedError
 
+def fitness(
+    solution: Tensor
+) -> float:
+    raise NotImplementedError
+
 def refinement(
     critics: list[Module],
     solution: Tensor
