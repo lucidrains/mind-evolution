@@ -1,8 +1,8 @@
 <img src="./figure1.png" width="400px"></img>
 
-## Mind Evolution - Pytorch (wip)
+## Mind Evolution (wip)
 
-Implementation of Mind Evolution, [Evolving Deeper LLM Thinking](https://arxiv.org/abs/2501.09891), from Deepmind, in Pytorch
+Implementation of Mind Evolution, [Evolving Deeper LLM Thinking](https://arxiv.org/abs/2501.09891), from Deepmind
 
 ## Citations
 

@@ -1,5 +1,5 @@
 [project]
-name = "mind-evolution-pytorch"
+name = "mind-evolution"
 version = "0.0.1"
 description = "Mind Evolution"
 authors = [
@@ -11,8 +11,7 @@ license = { file = "LICENSE" }
 keywords = [
     'artificial intelligence',
     'deep learning',
-    'transformer',
-    'attention mechanism',
+    'transformers',
     'evolution',
     'mimetic algorithm'
 ]
@@ -31,8 +30,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://pypi.org/project/mind-evolution-pytorch/"
-Repository = "https://github.com/lucidrains/mind-evolution-pytorch"
+Homepage = "https://pypi.org/project/mind-evolution/"
+Repository = "https://github.com/lucidrains/mind-evolution"
 
 [project.optional-dependencies]
 examples = []
@@ -57,4 +56,4 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["mind_evolution_pytorch"]
+packages = ["mind_evolution"]
