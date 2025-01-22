@@ -59,8 +59,7 @@ def tournament_selection(
     raise NotImplementedError
 
 def recombination(
-    solution1: Tensor,
-    solution2: Tensor
+    solutions: list[Tensor]
 ) -> Tensor:
     raise NotImplementedError
 
