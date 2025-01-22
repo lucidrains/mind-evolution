@@ -37,7 +37,7 @@ def reset_island(
     raise NotImplementedError
 
 def refinement(
-    critic: Module,
+    critics: list[Module],
     solution: Tensor
 ) -> Tensor:
     raise NotImplementedError
