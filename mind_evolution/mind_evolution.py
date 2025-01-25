@@ -1,13 +1,8 @@
 from __future__ import annotations
 
-import torch
-from torch import nn, Tensor
-from torch.nn import Module, ModuleList
-import torch.nn.functional as F
-
 # constants
 
-Population = list[Tensor]
+Population = list[str]
 Islands = list[Population]
 
 # helper functions
@@ -37,19 +32,19 @@ def reset_island(
     raise NotImplementedError
 
 def fitness(
-    solution: Tensor
+    solution: str
 ) -> float:
     raise NotImplementedError
 
 def refinement(
     critics: list[Module],
-    solution: Tensor
-) -> Tensor:
+    solution: str
+) -> str:
     raise NotImplementedError
 
 def mutation(
-    solution: Tensor
-) -> Tensor:
+    solution: str
+) -> str:
     raise NotImplementedError
 
 def tournament_selection(
@@ -59,16 +54,16 @@ def tournament_selection(
     raise NotImplementedError
 
 def recombination(
-    solutions: list[Tensor]
-) -> Tensor:
+    solutions: list[str]
+) -> str:
     raise NotImplementedError
 
 # main class
 
-class MindEvolution(Module):
+class MindEvolution():
     def __init__(
         self,
-        transformer: Module
+        transformer
     ):
         super().__init__()
 

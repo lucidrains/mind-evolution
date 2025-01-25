@@ -11,7 +11,6 @@ license = { file = "LICENSE" }
 keywords = [
     'artificial intelligence',
     'deep learning',
-    'transformers',
     'evolution',
     'mimetic algorithm'
 ]
@@ -25,8 +24,6 @@ classifiers=[
 ]
 
 dependencies = [
-    "torch>=2.0",
-    "einops>=0.8.0"
 ]
 
 [project.urls]
