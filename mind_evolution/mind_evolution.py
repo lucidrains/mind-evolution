@@ -58,6 +58,20 @@ def recombination(
 ) -> str:
     raise NotImplementedError
 
+# refinement through critical conversation
+
+class RefinementCriticalConversation():
+    def __init__(
+        self,
+        author,
+        critic
+    ):
+        self.author = author
+        self.critic = critic
+
+    def __call__(self):
+        raise NotImplementedError
+
 # main class
 
 class MindEvolution():
@@ -67,7 +81,7 @@ class MindEvolution():
 
     def __init__(
         self,
-        transformer: object,
+        transformer,
         *,
         generations = 10,   # the maximum number of generations to search for a solution
         islands = 4,        # independent populations to evolve
@@ -81,8 +95,8 @@ class MindEvolution():
         prob_no_parents = 1. / 6, # probability of conversation having no parents
         emigrate = 5,       # plans to emigrate to the next island after each island
         retries = 5,        # times to try to generate a plan before giving up
+        critic_transformer = None
     ):
-        super().__init__()
 
         self.transformer = transformer
 
@@ -100,6 +114,13 @@ class MindEvolution():
         self.prob_no_parents = prob_no_parents
         self.emigrate = emigrate
         self.retries = retries
+
+        # critical conversation logic - rcc
+
+        self.rcc = RefinementCriticalConversation(
+            transformer,
+            default(critic_transformers, transformer)
+        )
 
     def __call__(
         self,
