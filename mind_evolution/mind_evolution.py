@@ -61,11 +61,48 @@ def recombination(
 # main class
 
 class MindEvolution():
+    """
+    hyperparameters from section 3.2 of Mind Evolution paper
+    """
+
     def __init__(
         self,
-        transformer
+        transformer: object,
+        *,
+        generations = 10,   # the maximum number of generations to search for a solution
+        islands = 4,        # independent populations to evolve
+        conversations = 5,  # conversations per island
+        turns = 4,          # turns per conversation
+        reset_interval = 3, # how frequently to reset islands in generations
+        reset = 2,          # islands to reset, lowest mean score islands are chosen
+        top = 5,            # starting parents to transfer to islands when reset
+        candidates = 15,    # candidate parents to consider when resetting islands with LLM
+        parents = 5,        # maximum number of parents a conversation can have
+        prob_no_parents = 1. / 6, # probability of conversation having no parents
+        emigrate = 5,       # plans to emigrate to the next island after each island
+        retries = 5,        # times to try to generate a plan before giving up
     ):
         super().__init__()
 
-    def forward(self, x):
+        self.transformer = transformer
+
+        self.generations = generations
+        self.islands = islands
+        self.conversations = conversations
+        self.turns = turns
+        
+        self.reset_interval = reset_interval
+        self.reset = reset
+        self.top = top
+        self.candidates = candidates
+        
+        self.parents = parents
+        self.prob_no_parents = prob_no_parents
+        self.emigrate = emigrate
+        self.retries = retries
+
+    def __call__(
+        self,
+        x
+    ):
         return x
